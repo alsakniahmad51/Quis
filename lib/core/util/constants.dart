@@ -4,3 +4,4 @@ abstract class AppSize {
 }
 
 String fontApp = 'mochiy';
+String montserrate = 'montserrat';

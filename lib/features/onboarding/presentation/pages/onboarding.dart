@@ -22,6 +22,10 @@ class OnBoardingPageState extends State<OnBoardingPage> {
     );
   }
 
+  void _next() {
+    introKey.currentState!.next();
+  }
+
   Widget _buildFullscreenImage(String assetName) {
     return SvgPicture.asset(
       assetName,
@@ -32,8 +36,10 @@ class OnBoardingPageState extends State<OnBoardingPage> {
     );
   }
 
-  Widget _buildImage(String assetName,
-      [double width = 500, double hight = 720]) {
+  Widget _buildImage(
+    String assetName,
+    // [double width = 500, double hight = 720]
+  ) {
     return SizedBox(
       height: MediaQuery.of(context).size.height - 100,
       width: MediaQuery.of(context).size.width,
@@ -45,6 +51,20 @@ class OnBoardingPageState extends State<OnBoardingPage> {
     );
   }
 
+  // bool _isScrolling = false;
+
+  // Future<void> animateScroll(int page) async {
+  //   setState(() => _isScrolling = true);
+  //   await _pageController.animateToPage(
+  //     max(min(page, getPagesLength() - 1), 0),
+  //     duration: Duration(milliseconds: widget.animationDuration),
+  //     curve: widget.curve,
+  //   );
+  //   if (mounted) {
+  //     setState(() => _isScrolling = false);
+  //   }
+  // }
+
   @override
   Widget build(BuildContext context) {
     const bodyStyle = TextStyle(fontSize: 19.0);
@@ -52,10 +72,15 @@ class OnBoardingPageState extends State<OnBoardingPage> {
     const pageDecoration = PageDecoration(
       imageAlignment: Alignment.center,
       boxDecoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: AlignmentDirectional.bottomCenter,
-              colors: [Color(0xff0085CC), Color(0xff000E8F)])),
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: AlignmentDirectional.bottomCenter,
+          colors: [
+            Color(0xff0085CC),
+            Color(0xff000E8F),
+          ],
+        ),
+      ),
       footerFlex: 0,
       pageMargin: EdgeInsets.zero,
       titlePadding: EdgeInsets.zero,
@@ -73,6 +98,12 @@ class OnBoardingPageState extends State<OnBoardingPage> {
     return IntroductionScreen(
       showDoneButton: false,
       showNextButton: false,
+      next: Padding(
+        padding: EdgeInsets.only(bottom: 40.h, right: 100.w),
+        child: Container(
+          child: const Text("start"),
+        ),
+      ),
       showBottomPart: true,
       skip: Container(),
       // done: Container(),
@@ -95,14 +126,52 @@ class OnBoardingPageState extends State<OnBoardingPage> {
               Column(
                 children: [
                   SizedBox(
-                    height: 210.h,
+                    height: 390.h,
                   ),
                   Center(
-                      child: Text(
-                    style: TextStyle(fontSize: 24.sp, color: Colors.white),
-                    "Welcome to the online\nE-Learning App",
-                    textAlign: TextAlign.center,
-                  )),
+                    child: Text(
+                      style: TextStyle(fontSize: 24.sp, color: Colors.white),
+                      "Welcome to the online\nE-Learning App",
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 39.h,
+                  ),
+                  Center(
+                    child: Text(
+                      style: TextStyle(
+                          fontSize: 16.sp,
+                          color: Colors.white,
+                          fontFamily: montserrate),
+                      "This is an online school that allows\n you to rediscover yourself. Take the\n courses and be a better student",
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 39.h,
+                  ),
+                  Center(
+                    child: InkWell(
+                      onTap: () => introKey.currentState!.controller.nextPage(
+                          duration: const Duration(milliseconds: 400),
+                          curve: Curves.easeInToLinear),
+                      child: Container(
+                        width: 310.w,
+                        height: 44.h,
+                        decoration: BoxDecoration(
+                            color: const Color(0xff009FF5),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(8.r))),
+                        child: Center(
+                          child: const Text(
+                            "Start",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               )
             ],
