@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:quis_app/core/util/constants.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({super.key});
@@ -77,14 +79,33 @@ class OnBoardingPageState extends State<OnBoardingPage> {
       key: introKey,
       globalBackgroundColor: const Color(0xff016BBF),
       allowImplicitScrolling: true,
-      autoScrollDuration: 3000,
+      autoScrollDuration: 50000,
       infiniteAutoScroll: true,
 
       pages: [
         PageViewModel(
           title: "",
-          bodyWidget: Column(
-            children: [SvgPicture.asset("assets/svgimages/Frame 8.svg")],
+          bodyWidget: Stack(
+            alignment: Alignment.center,
+            children: [
+              SvgPicture.asset(
+                  height: AppSize.hight.h - 103.h,
+                  width: 450.w,
+                  "assets/svgimages/Frame 8.svg"),
+              Column(
+                children: [
+                  SizedBox(
+                    height: 210.h,
+                  ),
+                  Center(
+                      child: Text(
+                    style: TextStyle(fontSize: 24.sp, color: Colors.white),
+                    "Welcome to the online\nE-Learning App",
+                    textAlign: TextAlign.center,
+                  )),
+                ],
+              )
+            ],
           ),
           decoration: pageDecoration,
         ),
