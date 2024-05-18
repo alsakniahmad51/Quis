@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:quis_app/core/util/constants.dart';
-import 'package:quis_app/features/Authentecation/presentation/widgets/customtextfield.dart';
+import 'package:quis_app/features/Authentecation/presentation/widgets/custom_text_field.dart';
 import 'package:quis_app/features/onboarding/presentation/widgets/body_widget.dart';
 import 'package:quis_app/features/onboarding/presentation/widgets/customButton.dart';
 
@@ -19,7 +18,8 @@ class LoginPage extends StatelessWidget {
           height: AppSize.hight.h,
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/Frame 11.png')),
+              image: AssetImage('assets/images/Frame 11.png'),
+            ),
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
@@ -35,11 +35,17 @@ class LoginPage extends StatelessWidget {
               subtitle: "Enter your log in details to\naccess your account",
               button: Column(
                 children: [
-                  const CustomTextField(),
+                  const CustomTextField(
+                    icon: Icon(color: Colors.white, Icons.person),
+                    hintText: "Username",
+                  ),
                   SizedBox(
                     height: 11.h,
                   ),
-                  const CustomTextField(),
+                  const CustomTextField(
+                    hintText: "Password",
+                    icon: Icon(Icons.lock, color: Colors.white),
+                  ),
                   SizedBox(
                     height: 45.h,
                   ),
@@ -47,7 +53,29 @@ class LoginPage extends StatelessWidget {
                       textButton: "Log in",
                       onPressed: () {},
                       colorButton: const Color(0xff009FF5),
-                      iconButton: null)
+                      iconButton: null),
+                  SizedBox(
+                    height: 11.h,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Don’t have account ? ",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: montserrate,
+                            fontSize: 11.sp),
+                      ),
+                      Text(
+                        "Sign Up",
+                        style: TextStyle(
+                            color: Colors.blue,
+                            fontFamily: montserrate,
+                            fontSize: 11.sp),
+                      )
+                    ],
+                  )
                 ],
               )),
         ),
