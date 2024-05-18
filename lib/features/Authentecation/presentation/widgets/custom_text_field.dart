@@ -17,7 +17,7 @@ class CustomTextField extends StatelessWidget {
         cursorHeight: 15.h,
         cursorColor: Colors.white,
         style: TextStyle(
-            height: 0.8.h,
+            height: 0.5.h,
             color: Colors.white,
             fontFamily: montserrate,
             fontWeight: FontWeight.w500),
