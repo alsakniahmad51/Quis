@@ -7,29 +7,56 @@ import 'package:introduction_screen/introduction_screen.dart';
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
-    required this.introKey,
     required this.textButton,
+    required this.onPressed,
+    required this.colorButton,
+    required this.iconButton,
   });
 
-  final GlobalKey<IntroductionScreenState> introKey;
   final String textButton;
+  final void Function() onPressed;
+  final Color colorButton;
+  final IconData? iconButton;
   @override
   Widget build(BuildContext context) {
     return Center(
       child: InkWell(
-        onTap: () => introKey.currentState!.controller.nextPage(
-            duration: const Duration(milliseconds: 400),
-            curve: Curves.easeInToLinear),
+        onTap: onPressed,
         child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 10.w),
           width: 310.w,
           height: 44.h,
           decoration: BoxDecoration(
-              color: const Color(0xff009FF5),
+              color: colorButton,
               borderRadius: BorderRadius.all(Radius.circular(8.r))),
           child: Center(
-            child: Text(
-              textButton,
-              style: const TextStyle(color: Colors.white),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // SizedBox(
+                //   width: 10.w,
+                // ),
+                Padding(
+                  padding: EdgeInsets.only(left: 12.w),
+                  child: Icon(
+                    iconButton,
+                    color: colorButton == Colors.white
+                        ? Colors.black
+                        : Colors.white,
+                  ),
+                ),
+                Text(
+                  textAlign: TextAlign.center,
+                  textButton,
+                  style: TextStyle(
+                      color: colorButton == Colors.white
+                          ? Colors.black
+                          : Colors.white),
+                ),
+                SizedBox(
+                  width: 25.w,
+                )
+              ],
             ),
           ),
         ),

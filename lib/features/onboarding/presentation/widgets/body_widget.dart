@@ -4,8 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:quis_app/core/util/constants.dart';
-import 'package:quis_app/features/onboarding/presentation/pages/onboarding.dart';
-import 'package:quis_app/features/onboarding/presentation/widgets/customButton.dart';
 
 class BodyWidget extends StatelessWidget {
   const BodyWidget({
@@ -13,10 +11,13 @@ class BodyWidget extends StatelessWidget {
     required this.imagePath,
     required this.title,
     required this.subtitle,
+    required this.button,
   });
   final String imagePath;
   final String title;
   final String subtitle;
+
+  final Widget button;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -27,7 +28,7 @@ class BodyWidget extends StatelessWidget {
         Column(
           children: [
             SizedBox(
-              height: 390.h,
+              height: 425.h,
             ),
             Center(
               child: Text(
@@ -37,7 +38,7 @@ class BodyWidget extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 39.h,
+              height: 10.h,
             ),
             Center(
               child: Text(
@@ -50,12 +51,13 @@ class BodyWidget extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 39.h,
+              height: 25.h,
             ),
-            CustomButton(
-              introKey: introKey,
-              textButton: "Start",
-            ),
+            button
+            // CustomButton(
+            //   introKey: introKey,
+            //   textButton: textButton,
+            // ),
           ],
         )
       ],

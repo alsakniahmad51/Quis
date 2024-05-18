@@ -5,3 +5,8 @@ abstract class AppSize {
 
 String fontApp = 'mochiy';
 String montserrate = 'montserrat';
+void main() {
+  Set<String> a = {"Ahmad", "kd", "dkd"};
+
+  print(a.elementAt(0));
+}

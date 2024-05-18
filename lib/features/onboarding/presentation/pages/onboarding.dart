@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:quis_app/features/onboarding/presentation/widgets/onBoarding_pages_list.dart';
+import 'package:quis_app/features/onboarding/presentation/widgets/onboarding_pages_list.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({super.key});
@@ -27,7 +27,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
       allowImplicitScrolling: true,
       autoScrollDuration: 50000,
       infiniteAutoScroll: true,
-      pages: pages,
+      pages: pages(context),
 
       showSkipButton: false,
       skipOrBackFlex: 0,
