@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:quis_app/core/util/constants.dart';
-import 'package:quis_app/features/Authentecation/presentation/widgets/custom_text_field.dart';
-import 'package:quis_app/features/onboarding/presentation/widgets/body_widget.dart';
-import 'package:quis_app/features/onboarding/presentation/widgets/customButton.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+import '../../../../core/util/constants.dart';
+import '../../../onboarding/presentation/widgets/body_widget.dart';
+import '../../../onboarding/presentation/widgets/customButton.dart';
+import '../widgets/custom_text_field.dart';
+import '../widgets/do_have_account.dart';
+
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,16 +32,16 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           child: BodyWidget(
-              padding_of_button: 35.h,
-              padding_of_title: 435.h,
+              padding_of_button: 15.h,
+              padding_of_title: 425.h,
               padding_of_sub_title: 10.h,
               imagePath: "assets/svgimages/Frame 11.svg",
-              title: "Log in your account",
-              subtitle: "Enter your log in details to\naccess your account",
+              title: "Sign Up a New account",
+              subtitle: "Enter your details to Create\n your account",
               button: Column(
                 children: [
                   CustomTextField(
-                    padding: 70.w,
+                    padding: 65.w,
                     icon: const Icon(color: Colors.white, Icons.person),
                     hintText: "Username",
                   ),
@@ -47,43 +49,32 @@ class LoginPage extends StatelessWidget {
                     height: 11.h,
                   ),
                   CustomTextField(
-                    padding: 70.w,
+                    padding: 65.w,
                     hintText: "Password",
+                    icon: const Icon(Icons.lock, color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: 11.h,
+                  ),
+                  CustomTextField(
+                    padding: 40.w,
+                    hintText: "Confirm Password",
                     icon: const Icon(Icons.lock, color: Colors.white),
                   ),
                   SizedBox(
                     height: 45.h,
                   ),
                   CustomButton(
-                      textButton: "Log in",
-                      onPressed: () {},
+                      textButton: "Sign Up",
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/HomePage');
+                      },
                       colorButton: const Color(0xff009FF5),
                       iconButton: null),
                   SizedBox(
                     height: 11.h,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Don’t have account ? ",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: montserrate,
-                            fontSize: 11.sp),
-                      ),
-                      InkWell(
-                        onTap: () => Navigator.of(context).pushNamed('/signUp'),
-                        child: Text(
-                          "Sign Up",
-                          style: TextStyle(
-                              color: Colors.blue,
-                              fontFamily: montserrate,
-                              fontSize: 11.sp),
-                        ),
-                      )
-                    ],
-                  )
+                  const DoYouHaveAnAccount()
                 ],
               )),
         ),

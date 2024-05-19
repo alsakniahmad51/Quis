@@ -25,7 +25,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
       key: introKey,
       globalBackgroundColor: const Color(0xff016BBF),
       allowImplicitScrolling: true,
-      autoScrollDuration: 50000,
+      autoScrollDuration: 70000,
       infiniteAutoScroll: true,
       pages: pages(context),
 

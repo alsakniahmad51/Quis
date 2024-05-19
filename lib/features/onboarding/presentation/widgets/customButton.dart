@@ -1,8 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:introduction_screen/introduction_screen.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -54,7 +52,7 @@ class CustomButton extends StatelessWidget {
                           : Colors.white),
                 ),
                 SizedBox(
-                  width: 25.w,
+                  width: 30.w,
                 )
               ],
             ),

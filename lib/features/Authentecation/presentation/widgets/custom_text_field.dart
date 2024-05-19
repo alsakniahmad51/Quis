@@ -5,9 +5,13 @@ import '../../../../core/util/constants.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
-      {super.key, required this.hintText, required this.icon});
+      {super.key,
+      required this.hintText,
+      required this.icon,
+      required this.padding});
   final String hintText;
   final Widget icon;
+  final double padding;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -24,7 +28,7 @@ class CustomTextField extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hintText,
           prefix: SizedBox(
-            width: 60.w,
+            width: padding,
           ),
           hintStyle: TextStyle(color: Colors.white, fontSize: 16.sp),
           prefixIcon: icon,

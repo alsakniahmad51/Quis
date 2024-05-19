@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-
 import 'package:quis_app/core/util/constants.dart';
 
 class BodyWidget extends StatelessWidget {
@@ -12,10 +11,16 @@ class BodyWidget extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.button,
+    required this.padding_of_title,
+    required this.padding_of_sub_title,
+    required this.padding_of_button,
   });
   final String imagePath;
   final String title;
   final String subtitle;
+  final double padding_of_title;
+  final double padding_of_sub_title;
+  final double padding_of_button;
 
   final Widget button;
   @override
@@ -28,7 +33,7 @@ class BodyWidget extends StatelessWidget {
         Column(
           children: [
             SizedBox(
-              height: 425.h,
+              height: padding_of_title,
             ),
             Center(
               child: Text(
@@ -38,7 +43,7 @@ class BodyWidget extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 10.h,
+              height: padding_of_sub_title,
             ),
             Center(
               child: Text(
@@ -51,7 +56,7 @@ class BodyWidget extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 25.h,
+              height: padding_of_button,
             ),
             button
             // CustomButton(
