@@ -14,11 +14,16 @@ class BodyWidget extends StatelessWidget {
     required this.padding_of_title,
     required this.padding_of_sub_title,
     required this.padding_of_button,
+    required this.width_of_logo,
+    required this.hight_of_logo,
   });
   final String imagePath;
   final String title;
   final String subtitle;
   final double padding_of_title;
+  final double width_of_logo;
+  final double hight_of_logo;
+
   final double padding_of_sub_title;
   final double padding_of_button;
 
@@ -29,7 +34,11 @@ class BodyWidget extends StatelessWidget {
       alignment: Alignment.center,
       children: [
         SvgPicture.asset(
-            height: AppSize.hight.h - 103.h, width: 450.w, imagePath),
+          height: hight_of_logo,
+          width: width_of_logo,
+          imagePath,
+          fit: BoxFit.cover,
+        ),
         Column(
           children: [
             SizedBox(

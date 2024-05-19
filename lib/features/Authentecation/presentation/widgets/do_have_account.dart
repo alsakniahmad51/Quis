@@ -3,25 +3,30 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/util/constants.dart';
 
-class DoYouHaveAnAccount extends StatelessWidget {
-  const DoYouHaveAnAccount({
+class RowOfText extends StatelessWidget {
+  const RowOfText({
     super.key,
+    required this.text,
+    required this.button,
+    required this.onTap,
   });
-
+  final String text;
+  final String button;
+  final void Function() onTap;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          "already have an account ? ",
+          text,
           style: TextStyle(
               color: Colors.white, fontFamily: montserrate, fontSize: 11.sp),
         ),
         InkWell(
-          onTap: () => Navigator.of(context).pushNamed('/Auth'),
+          onTap: onTap,
           child: Text(
-            "Log In",
+            button,
             style: TextStyle(
                 color: Colors.blue, fontFamily: montserrate, fontSize: 11.sp),
           ),
