@@ -14,6 +14,9 @@ List<PageViewModel> pages(BuildContext context) => [
       PageViewModel(
         title: "",
         bodyWidget: BodyWidget(
+          padding_of_button: 35.h,
+          padding_of_title: 380.h,
+          padding_of_sub_title: 20.h,
           imagePath: "assets/svgimages/Frame 8.svg",
           title: "Welcome to the online\nE-Learning App",
           subtitle:
@@ -31,6 +34,9 @@ List<PageViewModel> pages(BuildContext context) => [
       ),
       PageViewModel(
         bodyWidget: BodyWidget(
+            padding_of_button: 60.h,
+            padding_of_title: 400.h,
+            padding_of_sub_title: 40.h,
             button: CustomButton(
               iconButton: null,
               colorButton: const Color(0xff009FF5),
@@ -49,6 +55,9 @@ List<PageViewModel> pages(BuildContext context) => [
       PageViewModel(
         title: "",
         bodyWidget: BodyWidget(
+            padding_of_button: 35.h,
+            padding_of_title: 380.h,
+            padding_of_sub_title: 10.h,
             imagePath: "assets/svgimages/Frame 10.svg",
             title: "Log in or sign up",
             subtitle: "select desire log in methode",
