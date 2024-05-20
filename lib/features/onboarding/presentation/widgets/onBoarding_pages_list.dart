@@ -14,6 +14,8 @@ List<PageViewModel> pages(BuildContext context) => [
       PageViewModel(
         title: "",
         bodyWidget: BodyWidget(
+          hight_of_logo: AppSize.hight.h - 103.h,
+          width_of_logo: 490.w,
           padding_of_button: 35.h,
           padding_of_title: 380.h,
           padding_of_sub_title: 20.h,
@@ -34,6 +36,8 @@ List<PageViewModel> pages(BuildContext context) => [
       ),
       PageViewModel(
         bodyWidget: BodyWidget(
+            hight_of_logo: AppSize.hight.h - 103.h,
+            width_of_logo: 460.w,
             padding_of_button: 60.h,
             padding_of_title: 400.h,
             padding_of_sub_title: 40.h,
@@ -55,6 +59,8 @@ List<PageViewModel> pages(BuildContext context) => [
       PageViewModel(
         title: "",
         bodyWidget: BodyWidget(
+            hight_of_logo: AppSize.hight.h - 103.h,
+            width_of_logo: 460.w,
             padding_of_button: 35.h,
             padding_of_title: 380.h,
             padding_of_sub_title: 10.h,

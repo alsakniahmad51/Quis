@@ -77,6 +77,9 @@ flutter:
     - family: montserrat
       fonts:
         - asset: assets/fonts/Montserrat-Medium.ttf
+    - family: lexend
+      fonts:
+        - asset: assets/fonts/Lexend-SemiBold.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
