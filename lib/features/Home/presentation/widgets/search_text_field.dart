@@ -28,7 +28,7 @@ class SearchTextField extends StatelessWidget {
               prefixIconConstraints: BoxConstraints.loose(Size(50.w, 35.h)),
               prefixIcon: Padding(
                 padding: EdgeInsets.only(left: 15.w),
-                child: SvgPicture.asset('assets/svgimages/vector.svg'),
+                child: SvgPicture.asset('assets/svgimages/Vector.svg'),
               ),
               border: buildOutlineInputBorder(),
               enabledBorder: buildOutlineInputBorder(),
