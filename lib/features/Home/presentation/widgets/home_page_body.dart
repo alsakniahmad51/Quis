@@ -1,10 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quis_app/core/util/constants.dart';
 import 'package:quis_app/features/Home/presentation/widgets/search_text_field.dart';
 
 import 'carousle_list_item.dart';
+import 'grid_view_builder.dart';
 import 'header_home_page_view.dart';
 
 class HomaPageBody extends StatefulWidget {
@@ -60,6 +62,44 @@ class _HomaPageBodyState extends State<HomaPageBody> {
                 enlargeCenterPage: true,
               ),
             ),
+            Padding(
+              padding: EdgeInsets.only(right: 260.w, bottom: 15.h),
+              child: Text(
+                "Featured",
+                style: TextStyle(
+                  fontSize: 16.sp,
+                  fontFamily: lexend,
+                ),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [SvgPicture.asset('assets/svgimages/Frame 16.svg')],
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  "Course",
+                  style: TextStyle(fontSize: 16.sp, fontFamily: lexend),
+                ),
+                SizedBox(
+                  width: 140.w,
+                ),
+                Text(
+                  "See All",
+                  style: TextStyle(
+                      fontSize: 8.sp, fontFamily: lexend, color: Colors.blue),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
+            const GridViewBuilder()
           ],
         ),
       ),
