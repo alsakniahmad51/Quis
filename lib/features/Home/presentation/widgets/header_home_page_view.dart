@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/util/constants.dart';
-import 'home_page_body.dart';
 
 class HeaderOfHomePageBody extends StatelessWidget {
   const HeaderOfHomePageBody({
     super.key,
-    required this.widget,
+    required this.userName,
   });
 
-  final HomaPageBody widget;
+  final String userName;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,7 @@ class HeaderOfHomePageBody extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(left: 40.w, top: 25.h),
           child: Text(
-            "👋 Hi, ${widget.userName}",
+            "👋 Hi, $userName",
             style: TextStyle(
                 fontSize: 18.sp,
                 fontFamily: lexend,
